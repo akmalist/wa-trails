@@ -43,7 +43,10 @@ body{
 
 .logo{
     height: 37px;
+   
 }
+
+ 
 
 .text-main{
     position: absolute;
@@ -63,6 +66,13 @@ body{
     font-weight: 400;
     letter-spacing: 35px;
 
+    animation-name: moveLeft;
+    animation-duration: 1s;
+    animation-delay: 2;
+    animation-timing-function: ease-out;
+
+    backface-visibility: hidden;
+
 }
 
 .heading-primary-sub{
@@ -70,5 +80,37 @@ body{
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 8.5px;
+    animation: moveRight 1s ease-out;
+  
+}
 
+
+@keyframes moveLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(10px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
 }
